@@ -43,7 +43,7 @@ class VRCAPI:
     def do_auth(self):
         r = requests.get(url = VRCAPI.base + "/auth/user", auth = requests.auth.HTTPBasicAuth(self.username, self.password), headers = VRCAPI.headers)
         r.raise_for_status()
-        print("Login return code: " + str(r.status_code))
+        #print("Login return code: " + str(r.status_code))
         
         # Successful
         if r.status_code == 200:
