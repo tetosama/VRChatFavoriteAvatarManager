@@ -264,8 +264,8 @@ def main():
             print("     exit: exit the program")
             continue
         elif args[0] == "group":
-            # Use a little regex to check if the input is valid
             
+            # Use a little regex to check if the input is valid
             if not re.match(r"list|clear|delete|create|save|load|switch", args[1]):
                 print("Invalid command, please use help command to get help!")
                 continue
