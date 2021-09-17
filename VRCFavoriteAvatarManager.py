@@ -102,7 +102,6 @@ class AvatarGroups:
         
         # Add avatars from target group to favorites
         self.loadGroup(target_group_name)
-
         return True
 
 
@@ -115,12 +114,14 @@ class AvatarGroups:
             print("The group with the given group name not found")
             return False
 
+        print("Unloading current favorites...Please wait...")
         for data in group.getAvatars():
             #avatar = data.json()
             favoriteId = data["favoriteId"]
             if not self.__unfavoriteAvatar(favoriteId):
                 print("Something went wrong while removing avatars from favorite: " + favoriteId)
 
+        print("Unloading complete.")
         return True
 
 
@@ -133,12 +134,13 @@ class AvatarGroups:
             print("The group with the given group name not found")
             return False
 
+        print("Loading avatars from group " + group_name + ", Please wait...")
         for data in group.getAvatars():
             #avatar = data.json()
             avatarId = data["id"]
             if not self.__favoriteAvatar(avatarId):
                 print("Something went wrong while adding avatars to favorite: " + avatarId)
-
+        print("Loading complete")
         return True
 
 
@@ -263,8 +265,8 @@ def main():
             continue
         elif args[0] == "group":
             # Use a little regex to check if the input is valid
-            re.match(r"list|clear|delete|create|save|load|switch", args[1])
-            if not matchObj:
+            
+            if not re.match(r"list|clear|delete|create|save|load|switch", args[1]):
                 print("Invalid command, please use help command to get help!")
                 continue
 
