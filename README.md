@@ -16,7 +16,7 @@ Project is created with:
 ## Setup
 Please put CustomVrChatAPI.py and VRCFavoriteAvatarManager.py in a new folder which is dedicated for avatar manager's use only!
 Run the program by command
-'''
+```
 python VRCFavoriteAvatarManager.py
-'''
+```
 Use help command to get help.
